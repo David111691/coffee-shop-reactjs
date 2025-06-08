@@ -1,9 +1,6 @@
-import AnnouncementBar from "./AnnouncementBar";
-
 function Header() {
   return (
-    <>
-      <AnnouncementBar />
+    <div className="header__container">
       <header className="header">
         <a className="header__logo">
           <img
@@ -87,8 +84,7 @@ function Header() {
           </li>
         </ul>
       </header>
-      <div className="header_fixed-offset"></div>
-    </>
+    </div>
   );
 }
 
