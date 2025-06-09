@@ -1,4 +1,4 @@
-function Header() {
+function Header({ handleCartClick }) {
   return (
     <div className="header__container">
       <header className="header">
@@ -70,7 +70,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a className="header__second-link" href="#">
+            <button onClick={handleCartClick} className="header__second-link" href="#">
               <svg fill="none" width="24" viewBox="0 0 24 24">
                 <path
                   d="M2 10h20l-4 11H6L2 10Zm14-3a4 4 0 0 0-8 0"
@@ -80,7 +80,7 @@ function Header() {
                   stroke-linejoin="round"
                 ></path>
               </svg>
-            </a>
+            </button>
           </li>
         </ul>
       </header>

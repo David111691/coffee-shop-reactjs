@@ -49,7 +49,7 @@ body {
 .header__container {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 5;
 }
 
 .header__nav-container {
@@ -139,6 +139,9 @@ body {
 
 .header__second-link {
   color: #626161;
+
+  border-style: none;
+  background: none;
 }
 
 /*////////////////////////*/
@@ -402,13 +405,44 @@ body {
   background-color: #f6f5ef;
   color: #626161;
 
-  z-index: 999999;
+  z-index: 15;
 
   position: fixed;
   right: 0;
   top: 0;
 
   font-family: "Sofia Pro", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+
+  animation-duration: 0.5s;
+  animation-name: slide-in;
+}
+
+.cart--slide-out {
+  animation-duration: 0.5s;
+  animation-name: slide-out;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 150vw 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 150vw 0;
+  }
 }
 
 .cart__header {
@@ -423,10 +457,26 @@ body {
   padding: 1.8rem 3.2rem;
 }
 
+.cart__close-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  margin-top: 0.4rem;
+}
+
+.cart__empty-message {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-grow: 1;
+}
+
 .cart__overlay-background {
   background-color: #6d6d6d5d;
-  z-index: 99999;
   position: fixed;
   width: 100vw;
   height: 100vh;
+  z-index: 15;
 }

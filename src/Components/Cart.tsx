@@ -1,12 +1,25 @@
-const Cart: React.FC = () => {
+import { createPortal } from "react-dom";
+import { useState, useEffect } from "react";
+
+const Cart: React.FC = ({ handleClick, isClosing }) => {
+  const portalRoot = document.getElementById("root");
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
-    <div className="cart">
+    <div className={`cart ${isClosing ? "cart--slide-out" : ""}`}>
       <div className="cart__header">
         <p>Cart</p>
-        <span>&times;</span>
+        <button className="cart__close-button" onClick={handleClick}>&times;</button>
       </div>
-      <p className="cart__empty-message">You cart is empty</p>
-      <div className="cart__overlay-background"></div>
+      <div className="cart__empty-message"><p>Your cart is empty</p></div>
+      {createPortal(<div className="cart__overlay-background"></div>, portalRoot)}
     </div>
   );
 };
