@@ -481,4 +481,32 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 10;
+
+  animation-duration: 0.5s;
+  animation-name: overlay--appear-in;
+}
+
+.cart__overlay--appear-out {
+  animation-duration: 0.5s;
+  animation-name: overlay--appear-out;
+}
+
+@keyframes overlay--appear-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes overlay--appear-out {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
