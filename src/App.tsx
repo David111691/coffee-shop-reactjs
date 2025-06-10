@@ -1,10 +1,13 @@
+import { useState } from "react";
+
 import AnnouncementBar from "./Components/AnnouncementBar";
 import Header from "./Components/Header";
-import MainContainer from "./MainContainer";
-import HomePage from "./Pages/HomePage";
+
 import Cart from "./Components/Cart";
 import Footer from "./Components/Footer";
-import { useState } from "react";
+
+import { RouterProvider } from "react-router";
+import router from './routes';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -25,9 +28,7 @@ function App() {
     <div>
       <AnnouncementBar />
       <Header handleCartClick={handleCartOpen} />
-      <MainContainer>
-        <HomePage />
-      </MainContainer>
+      <RouterProvider router={router} />
       {isCartOpen ? <Cart handleClick={handleCartOpen} isClosing={isCartClosing} /> : ""}
       <Footer />
     </div>
