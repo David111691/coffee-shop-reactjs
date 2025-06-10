@@ -510,3 +510,39 @@ body {
     opacity: 0;
   }
 }
+
+/*////////////////////////*/
+/* PANTRY */
+/*////////////////////////*/
+.pantry {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.2rem;
+  row-gap: 4.4rem;
+
+  padding: 0 4.8rem;
+  margin-bottom: 6.4rem;
+}
+
+.pantry__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  font-size: 1.3rem;
+}
+
+.pantry__item-img {
+  width: 100%;
+  /* height: auto; */
+}
+
+.pantry__item-name {
+  color: #242424;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.pantry__item-price {
+  color: #626161;
+}
