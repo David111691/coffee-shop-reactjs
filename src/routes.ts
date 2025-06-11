@@ -17,6 +17,13 @@ const router = createBrowserRouter([
         },
         Component: PantryPage,
     },
+    {
+        path: "/products/:name",
+        loader: async () => {
+            return { items: await getPantryItem() };
+        },
+        Component: PantryPage,
+    }
 ]);
 
 export default router;

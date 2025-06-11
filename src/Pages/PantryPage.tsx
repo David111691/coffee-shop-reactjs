@@ -2,17 +2,15 @@ import { useLoaderData } from "react-router";
 import ProductItem from "../Components/ProductItem";
 
 const PantryPage: React.FC = () => {
-  const { items: pantryItems } = useLoaderData();
+    const { items: pantryItems } = useLoaderData();
 
-  console.log(pantryItems);
-
-  return (
-    <div className="pantry">
-      {pantryItems.map((item) => (
-        <ProductItem imgLink={item.image} name={item.name} price={item.price} />
-      ))}
-    </div>
-  );
+    return (
+        <div className="pantry">
+            {pantryItems.map((item) => (
+                <ProductItem imgLink={item.image} name={item.name} price={item.price} />
+            ))}
+        </div>
+    );
 };
 
 export default PantryPage;
