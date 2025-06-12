@@ -1,9 +1,15 @@
-const ProductItem: React.FC = ({ imgLink, name, price }) => {
+import { Link } from "react-router";
+
+const ProductItem: React.FC = ({ imgLink, name, price, routeName }) => {
   return (
     <div className="pantry__item">
-      <img className="pantry__item-img" src={imgLink} />
+      <Link to={`/products/${routeName}`}>
+        <img className="pantry__item-img" src={imgLink} />
+      </Link>
       <div>
-        <p className="pantry__item-name">{name}</p>
+        <Link to={`/products/${routeName}`}>
+          <p className="pantry__item-name">{name}</p>
+        </Link>
         <span className="pantry__item-price">{price} $</span>
       </div>
     </div>

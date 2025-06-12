@@ -1,28 +1,34 @@
+import { useLoaderData } from "react-router";
+
 const ProductItemPage: React.FC = () => {
+  const { item: pantryItem } = useLoaderData();
+
+  // console.log(pantryItem);
+
   return <div className="">
     {/* заголовок */}
-    <h1></h1>
+    <h1>{pantryItem.name}</h1>
     {/* рейтинг и кол-во отзывов */}
     <div>
       <div></div>
       <span>N reviews</span>
     </div>
     {/* цена */}
-    <p></p>
+    <p>${pantryItem.price}</p>
     {/* полоска */}
     <div></div>
     {/* кол-во */}
     <div></div>
     {/* добавить в корзину */}
-    <button></button>
+    <button>Add to cart</button>
     {/* описание */}
-    <p></p>
+    <p>{pantryItem.description}</p>
     {/* вес */}
-    <span></span>
+    <span>{pantryItem.weight}</span>
     {/* ингредиенты */}
-    <div></div>
+    <div>{pantryItem.ingredients}</div>
     {/* sustainability */}
-    <div></div>
+    <div>{pantryItem.sustainability}</div>
   </div>;
 };
 

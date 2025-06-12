@@ -5,7 +5,7 @@ function Header({ handleCartClick }) {
         <a className="header__logo">
           <img
             className="header__img"
-            src="./logo.webp"
+            src="/logo.webp"
             width="100"
             height="100"
           />

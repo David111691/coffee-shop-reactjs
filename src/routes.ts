@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router";
 
 import HomePage from "./Pages/HomePage";
 import PantryPage from "./Pages/PantryPage";
+import ItemPage from "./Pages/ItemPage";
 
-import getPantryItems from "./data/PantryData";
+import { getPantryItems, getPantryItem } from "./data/PantryData";
 
 const router = createBrowserRouter([
     {
@@ -19,10 +20,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/products/:name",
-        loader: async () => {
-            return { items: await getPantryItem() };
+        loader: async ({ params }) => {
+            const name = params.name;
+            return { item: await getPantryItem(name) };
         },
-        Component: PantryPage,
+        Component: ItemPage,
     }
 ]);
 
