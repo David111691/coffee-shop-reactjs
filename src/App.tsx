@@ -5,10 +5,8 @@ import Header from "./Components/Header";
 
 import Cart from "./Components/Cart";
 import Footer from "./Components/Footer";
-
-import { RouterProvider } from "react-router";
-import router from './routes';
 import { AuthProvider } from "./Auth/AuthContext";
+import { Outlet } from "react-router";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -27,13 +25,13 @@ function App() {
 
   return (
     <div>
-      <AnnouncementBar />
-      <Header handleCartClick={handleCartOpen} />
       <AuthProvider>
-        <RouterProvider router={router} />
+        <AnnouncementBar />
+        <Header handleCartClick={handleCartOpen} />
+        <Outlet />
+        {isCartOpen ? <Cart handleClick={handleCartOpen} isClosing={isCartClosing} /> : ""}
+        <Footer />
       </ AuthProvider>
-      {isCartOpen ? <Cart handleClick={handleCartOpen} isClosing={isCartClosing} /> : ""}
-      <Footer />
     </div>
   );
 }

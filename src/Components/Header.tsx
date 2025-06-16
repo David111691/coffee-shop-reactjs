@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function Header({ handleCartClick }) {
   return (
     <div className="header__container">
@@ -12,10 +14,10 @@ function Header({ handleCartClick }) {
         </a>
         <ul className="header__primary-nav">
           <li className="header__link-container">
-            <a className="header__link">New</a>
+            <Link className="header__link" to="/">New</Link>
           </li>
           <li className="header__link-container">
-            <a className="header__link">Pantry</a>
+            <Link className="header__link" to="/pantry">Pantry</Link>
           </li>
           <li className="header__link-container">
             <a className="header__link">Coffee</a>
@@ -32,7 +34,7 @@ function Header({ handleCartClick }) {
         </ul>
         <ul className="header__secondary-nav">
           <li>
-            <a className="header__second-link" href="#">
+            <Link className="header__second-link" to="/login">
               <svg fill="none" width="24" viewBox="0 0 24 24">
                 <path
                   d="M16.125 8.75c-.184 2.478-2.063 4.5-4.125 4.5s-3.944-2.021-4.125-4.5c-.187-2.578 1.64-4.5 4.125-4.5 2.484 0 4.313 1.969 4.125 4.5Z"
@@ -48,7 +50,7 @@ function Header({ handleCartClick }) {
                   stroke-miterlimit="10"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </li>
           <li>
             <a className="header__second-link" href="#">
