@@ -546,3 +546,138 @@ body {
 .pantry__item-price {
   color: #626161;
 }
+
+/*////////////////////////*/
+/* PRODUCT PAGE */
+/*////////////////////////*/
+.product {
+  font-family: "Sofia Pro", sans-serif;
+  color: #242424;
+
+  margin: 0 auto;
+  width: 120rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+
+  margin-bottom: 3.6rem;
+}
+
+.product__image {
+  flex-basis: 1;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+.product__image-img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.product__item--desc {
+  flex-basis: 1;
+  flex-shrink: 1;
+  flex-grow: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 1.2rem;
+}
+
+.product__header {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.product__rating {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.product__star {
+  fill: #E4E2DD;
+  color: #E4E2DD;
+}
+
+.product__price {
+  font-size: 2.4rem;
+}
+
+.product__strip {
+  background-color: #E4E2DD;
+  height: 0.5px;
+}
+
+.product__amount {}
+
+.product__button-add {
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: rgb(98, 97, 97);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  padding: 1.4rem 2.8rem;
+  border-style: none;
+}
+
+.product__description {
+  font-size: 1.2rem;
+}
+
+.product__weight {
+  font-weight: 600;
+}
+
+.product__ingredients {}
+
+.product__sustain {}
+
+/*////////////////////////*/
+/* PRODUCT PAGE */
+/*////////////////////////*/
+.accordion {
+  align-self: stretch;
+}
+
+.accordion__content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.accordion__title {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.accordion__header {
+  font-weight: 700;
+}
+
+.accordion__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__title-sign {
+  font-size: 1.8rem;
+}
+
+.accordion__content.open {
+  /* max-height задаётся inline через style={} */
+}
+
+.accordion--text {
+  font-family: "Sofia Pro", sans-serif;
+  color: #242424;
+  font-size: 1.2rem;
+  font-weight: 400;
+}

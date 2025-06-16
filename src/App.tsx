@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 
 import { RouterProvider } from "react-router";
 import router from './routes';
+import { AuthProvider } from "./Auth/AuthContext";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -28,7 +29,9 @@ function App() {
     <div>
       <AnnouncementBar />
       <Header handleCartClick={handleCartOpen} />
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </ AuthProvider>
       {isCartOpen ? <Cart handleClick={handleCartOpen} isClosing={isCartClosing} /> : ""}
       <Footer />
     </div>

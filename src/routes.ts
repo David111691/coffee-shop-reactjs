@@ -3,8 +3,10 @@ import { createBrowserRouter } from "react-router";
 import HomePage from "./Pages/HomePage";
 import PantryPage from "./Pages/PantryPage";
 import ItemPage from "./Pages/ItemPage";
+import LoginPage from "./Pages/LoginPage";
 
 import { getPantryItems, getPantryItem } from "./data/PantryData";
+import Dashboard from "./Pages/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
             return { item: await getPantryItem(name) };
         },
         Component: ItemPage,
+    },
+    {
+        path: "/login",
+        Component: LoginPage,
+    },
+    {
+        path: "/dashboard",
+        Component: Dashboard
     }
 ]);
 
